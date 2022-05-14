@@ -12,11 +12,11 @@ class Solution {
                 head = head.next;
             } else {
                     head = head.next;
-                    curr.next = null;
             }
       
            
        }
+        curr.next = null;
         return dummy.next;
     }
 }
