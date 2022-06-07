@@ -1,0 +1,32 @@
+class Solution {
+    public boolean isValid(String s) {
+        
+        if(s.length()%2 !=0) {
+            return false;
+        }
+        Stack<Character> stack = new Stack<>();
+        for(char x : s.toCharArray()) {
+            if(x == ')' && !stack.isEmpty() && stack.peek() =='('){
+                stack.pop();
+            }
+            else if(x == ']' && !stack.isEmpty() && stack.peek() =='['){
+                stack.pop();
+            }
+            else if(x == '}' && !stack.isEmpty() && stack.peek() =='{'){
+                stack.pop();
+            }
+            else {
+                stack.push(x);
+            }      
+        }
+       return stack.isEmpty();
+        
+        
+        
+        
+        
+        
+    }
+}
+
+//the idea here is that the string must be valid ie '()()' not '([)]' because then we would just use count
